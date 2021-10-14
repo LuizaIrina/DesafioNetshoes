@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkGist {
 
-    fun getGist(): GistService {
+    fun connectGistsAPI(): GistService {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.github.com/")

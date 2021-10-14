@@ -9,4 +9,7 @@ interface GistService {
     @GET("gists")
     fun listingGists(): Observable<List<Gist>>
 
+    @GET("gists/{gist_id}")
+    fun detailingGists(@Path("gist_id") id: String): Observable<Gist>
+
 }

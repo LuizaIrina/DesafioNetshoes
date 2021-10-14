@@ -9,25 +9,14 @@ import com.example.desafionetshoes.data.NetworkGist
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class MainActivityViewModel : ViewModel() {
-
+class DetailGistActivityViewModel : ViewModel(){
     //QUEM VÊ É A VIEWMODEL
-    private val _gistsLiveData = MutableLiveData<List<Gist>>()
+    private val _gistDetailLiveData = MutableLiveData<Gist>()
     //QUEM VÊ É A ACTIVITY
-    val gistsLiveData : LiveData<List<Gist>> = _gistsLiveData
+    val gistDetailLiveData : LiveData<Gist> = _gistDetailLiveData
 
-    //private val fetchCharactersUseCase = FetchCharactersUseCase()
-
-    fun getGists(){
-        /*var listTest = mutableListOf<GistsList>()
-        val gist1 : GistsList = GistsList("amanda","www","xml")
-        val gist2 : GistsList = GistsList("vitor","www","py")
-        val gist3 : GistsList = GistsList("fernando","www","readme")
-        listTest.add(gist1);listTest.add(gist2);listTest.add(gist3)
-        listTest.add(GistsList("roberta","www","c"))
-        _gistsLiveData.value = listTest*/
-
-        NetworkGist.connectGistsAPI().listingGists()
+    fun getGistDetail(id : String){
+        NetworkGist.connectGistsAPI().detailingGists(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnError {
@@ -35,9 +24,12 @@ class MainActivityViewModel : ViewModel() {
                 // carregar a tela de "o sistema falhou"
             }
             .subscribe { resposta ->
-                _gistsLiveData.value = resposta
+                _gistDetailLiveData.value = resposta
                 //moviesAdapter.dataset.addAll(resposta.results)
                 //moviesAdapter.notifyDataSetChanged()
             }
     }
+
+
+
 }
