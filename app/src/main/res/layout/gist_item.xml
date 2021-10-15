@@ -7,8 +7,8 @@
 
     <ImageButton
         android:id="@+id/ImbGusrPhoto"
-        android:layout_width="131dp"
-        android:layout_height="128dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -18,33 +18,35 @@
 
     <TextView
         android:id="@+id/TxtGusrName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="225dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
         android:text="User Name"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/ImbGusrPhoto"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TxtGtype"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="128dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="08dp"
         android:text="archive type"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImbGusrPhoto" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ImbGusrPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/TxtGusrName"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ToggleButton
         android:id="@+id/BtnFavorite"
-        android:layout_width="80dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/baseline_star_border_20"
@@ -52,7 +54,9 @@
         android:textOff=" "
         android:textOn=" "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/TxtGtype"
         app:layout_constraintTop_toBottomOf="@+id/TxtGusrName" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

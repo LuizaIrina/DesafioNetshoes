@@ -84,22 +84,4 @@ class DetailGistActivityViewModel : ViewModel(){
 
     }
 
-// FUNCOES MINHAS
-/*    fun favoritingGist(gist : Gist, context: Context){
-        var gist_fav : GistFav = GistFav(gist.id,
-            gist.files.map { file -> file.value.type }.toString(),
-            gist.files.map { file -> file.value.filename }.toString(),
-            gist.owner.login, gist.owner.avatar_url)
-        DBFavGist.connectDbFavGist(context).gistFavDao().insertFavGist(gist_fav)
-    }
-    fun desfavoritingGist(gist : Gist, context: Context){
-        var gist_fav : GistFav = GistFav(gist.id,
-            gist.files.map { file -> file.value.type }.toString(),
-            gist.files.map { file -> file.value.filename }.toString(),
-            gist.owner.login, gist.owner.avatar_url)
-        DBFavGist.connectDbFavGist(context).gistFavDao().deleteFavGist(gist_fav)
-    }
-    fun getListFavorites(context: Context){
-        _gistFavLiveData.value = DBFavGist.connectDbFavGist(context).gistFavDao().getAllFavGist()
-    }*/
 }

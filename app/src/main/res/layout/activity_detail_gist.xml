@@ -18,48 +18,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <ImageView
         android:id="@+id/ImgPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TxtTitle"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/TxtNameUsr"
+        android:id="@+id/txtUSUARIO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="176dp"
-        android:text="Name User"
+        android:layout_marginTop="120dp"
+        android:text="@string/title_user_detail"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/ImgPhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/TxtDetail"
-        android:layout_width="222dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="48dp"
-        android:text="filename, type ..."
+        android:id="@+id/TxtNameUsr"
+        android:layout_width="152dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="42dp"
+        android:text="Name User"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/ImgPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/txtUSUARIO" />
+
+    <TextView
+        android:id="@+id/txtNOMEARQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/title_namearch_detail"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ImgPhoto" />
+
+    <TextView
+        android:id="@+id/TxtNameArchive"
+        android:layout_width="229dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:text="filename"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNOMEARQ" />
+
+    <TextView
+        android:id="@+id/txtTIPOARQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/title_filearch_detail"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TxtNameArchive" />
+
+    <TextView
+        android:id="@+id/TxtTypeArchive"
+        android:layout_width="209dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:text="filtype ..."
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTIPOARQ" />
 
     <ToggleButton
         android:id="@+id/TgbtnFavorite"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/baseline_star_border_20"
@@ -68,6 +113,6 @@
         android:textOff=" "
         android:textOn=" "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TxtDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/TxtTypeArchive" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

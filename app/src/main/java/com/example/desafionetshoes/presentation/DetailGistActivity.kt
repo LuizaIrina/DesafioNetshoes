@@ -15,7 +15,8 @@ class DetailGistActivity : AppCompatActivity() {
 
     private lateinit var photoUser: ImageView
     private lateinit var nameUser: TextView
-    private lateinit var infoDetail: TextView
+    private lateinit var filenameDetail: TextView
+    private lateinit var filetypeDetail: TextView
     private lateinit var btnFavorite: ToggleButton
 
     private lateinit var Textoteste: TextView
@@ -30,10 +31,10 @@ class DetailGistActivity : AppCompatActivity() {
 
         photoUser = findViewById(R.id.ImgPhoto)
         nameUser = findViewById(R.id.TxtNameUsr)
-        infoDetail = findViewById(R.id.TxtDetail)
+        filenameDetail = findViewById(R.id.TxtNameArchive)
+        filetypeDetail = findViewById(R.id.TxtTypeArchive)
         btnFavorite = findViewById(R.id.TgbtnFavorite)
 
-        Textoteste = findViewById(R.id.TxtDetail)
 
         var idGistChoosed = intent.getStringExtra(CHOOSED_GIST_ID)
         if (idGistChoosed != null){
@@ -74,8 +75,9 @@ class DetailGistActivity : AppCompatActivity() {
     fun setupObserveGistDetail() {
         viewModel.gistDetailLiveData.observe(this,
             { resposta ->
-                nameUser.text = resposta.owner.login
-                infoDetail.text = resposta.files.map { file -> file.value.type }.toString()
+                nameUser.text = resposta.owner.login.uppercase()
+                filenameDetail.text = resposta.files.map { file -> file.value.filename }.toString()
+                filetypeDetail.text = resposta.files.map { file -> file.value.type }.toString()
                 photoUser.load(resposta.owner.avatar_url)
                 gistWorked = resposta
 
