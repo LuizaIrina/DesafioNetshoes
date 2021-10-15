@@ -6,9 +6,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafionetshoes.R
-import com.example.desafionetshoes.data.NetworkGist
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         setupObserveGistsList()
 
         //textoTeste = findViewById(R.id.TxtWelcome)
-        //getGistList()
 
     }
 
@@ -47,20 +43,5 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    /*fun getGistList(){
-        NetworkGist.getGist().listingGists()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .doOnError {
-                //Log.e()
-                // carregar a tela de "o sistema falhou"
-            }
-            .subscribe { resposta ->
-                textoTeste.text = resposta[1].id
-                gistsAdapter.dataset.addAll(resposta)
-                gistsAdapter.notifyDataSetChanged()
-                //moviesAdapter.dataset.addAll(resposta.results)
-                //moviesAdapter.notifyDataSetChanged()
-            }
-    }*/
+
 }

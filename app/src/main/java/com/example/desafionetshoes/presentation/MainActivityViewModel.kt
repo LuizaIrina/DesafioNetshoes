@@ -3,9 +3,8 @@ package com.example.desafionetshoes.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.desafionetshoes.data.Gist
-import com.example.desafionetshoes.data.GistsList
-import com.example.desafionetshoes.data.NetworkGist
+import com.example.desafionetshoes.data.remoteDS.Gist
+import com.example.desafionetshoes.data.remoteDS.NetworkGist
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -19,13 +18,6 @@ class MainActivityViewModel : ViewModel() {
     //private val fetchCharactersUseCase = FetchCharactersUseCase()
 
     fun getGists(){
-        /*var listTest = mutableListOf<GistsList>()
-        val gist1 : GistsList = GistsList("amanda","www","xml")
-        val gist2 : GistsList = GistsList("vitor","www","py")
-        val gist3 : GistsList = GistsList("fernando","www","readme")
-        listTest.add(gist1);listTest.add(gist2);listTest.add(gist3)
-        listTest.add(GistsList("roberta","www","c"))
-        _gistsLiveData.value = listTest*/
 
         NetworkGist.connectGistsAPI().listingGists()
             .subscribeOn(Schedulers.io())

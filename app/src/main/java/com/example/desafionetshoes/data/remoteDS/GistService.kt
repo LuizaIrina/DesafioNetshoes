@@ -1,9 +1,9 @@
-package com.example.desafionetshoes.data
+package com.example.desafionetshoes.data.remoteDS
 
+import com.example.desafionetshoes.data.remoteDS.Gist
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface GistService {
     @GET("gists")

@@ -7,12 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.desafionetshoes.R
-import com.example.desafionetshoes.data.Gist
-import com.example.desafionetshoes.data.GistsList
+import com.example.desafionetshoes.data.localDS.GistFav
+import com.example.desafionetshoes.data.remoteDS.Gist
 
 const val CHOOSED_GIST_ID = "com.example.desafionetshoes.ID"
 
@@ -37,7 +38,22 @@ public class GistsAdapter(var context: Context, var dataset: MutableList<Gist> =
         holder.gistArType.text = dataset[position].files.map { file -> file.value.type }.toString()
 
         // button toggle
-        //holder.idMovie.text = dataset[position].id.toString()
+        holder.btnFavorite.setOnCheckedChangeListener(){ _, isChecked ->
+            if (isChecked) {
+                holder.btnFavorite.setBackgroundResource(R.drawable.baseline_star_20)
+                //chamo a funcao de favoritar o gist e mudo o atributo booleano
+                Toast.makeText(context,"favoritou", Toast.LENGTH_LONG).show()
+                //Textoteste.text = "favoritou"
+
+            } else {
+                holder.btnFavorite.setBackgroundResource(R.drawable.baseline_star_border_20)
+                //verifico o atributo booleano, se estiver true chamo a funcao de desfavoritar e mudo para false
+                Toast.makeText(context,"desfavoritou", Toast.LENGTH_LONG).show()
+                //Textoteste.text = "desfavoritou"
+            }
+        }
+
+        // button 2activity
         holder.gistUserPhoto.setOnClickListener{
             val intent = Intent(context, DetailGistActivity::class.java).apply{
                 putExtra(CHOOSED_GIST_ID,dataset[position].id.toString())
